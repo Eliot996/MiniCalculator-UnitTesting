@@ -28,4 +28,17 @@ class CalculatorTest {
         int result = new Calculator().sum(-20,10);
         assertEquals(-10, result);
     }
+
+    @Test
+    void testRandom(){
+        // Arrange
+        Calculator calculator = new Calculator();
+
+        for (int i = 0; i < 1000000000; i++) { // Act
+            int result = calculator.random();
+
+            // Assert
+            assertTrue(result >= 1 && result <= 6);
+        }
+    }
 }
