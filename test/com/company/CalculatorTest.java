@@ -23,10 +23,17 @@ class CalculatorTest {
         int result = new Calculator().sum(20,-10);
         assertEquals(10, result);
     }
+
     @Test
     void testSum_withNegativePositiveNumber() {
         int result = new Calculator().sum(-20,10);
         assertEquals(-10, result);
+    }
+
+    @Test
+    void testSum_WithTooLargeIntegers() {
+        // Act and Assert
+        assertThrows(IllegalArgumentException.class, () -> new Calculator().sum(101,10));
     }
 
     @Test
